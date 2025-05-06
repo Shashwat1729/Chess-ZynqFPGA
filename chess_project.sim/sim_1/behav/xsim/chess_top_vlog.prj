@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../chess_project.srcs/sources_1/new/display_interface.v" \
+"../../../../chess_project.srcs/sources_1/new/game_logic.v" \
+"../../../../chess_project.srcs/sources_1/new/hvsync_generator.v" \
+"../../../../chess_project.srcs/sources_1/new/input_debounce.v" \
+"../../../../chess_project.srcs/sources_1/new/chess_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

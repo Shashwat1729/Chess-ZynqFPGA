@@ -1,0 +1,178 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Apr 28 17:39:53 2025
+| Host         : Shashwat-Thinkbook running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file chess_top_control_sets_placed.rpt
+| Design       : chess_top
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   100 |
+|    Minimum number of control sets                        |   100 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   379 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   100 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |    75 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     5 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               7 |            7 |
+| No           | No                    | Yes                    |              21 |           11 |
+| No           | Yes                   | No                     |              41 |           20 |
+| Yes          | No                    | No                     |              22 |            5 |
+| Yes          | No                    | Yes                    |             112 |           28 |
+| Yes          | Yes                   | No                     |             346 |          136 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------+------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
+|              Clock Signal             |                     Enable Signal                    |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------------+------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/spi_data_i_1_n_0     | Sw0_IBUF                                               |                1 |              1 |         1.00 |
+|  game_logic_inst/move_is_legal_reg/G0 |                                                      |                                                        |                1 |              1 |         1.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/oled_dc_n_i_1_n_0             | Sw0_IBUF                                               |                1 |              1 |         1.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/currPage_reg[5]      | Sw0_IBUF                                               |                1 |              3 |         3.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[1]                                 | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[58]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[29]                                | Sw0_IBUF                                               |                3 |              4 |         1.33 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[51]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[42]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[31]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[49]                                | Sw0_IBUF                                               |                4 |              4 |         1.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[32]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[43]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[60]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[35]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[59]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[61]                                | Sw0_IBUF                                               |                4 |              4 |         1.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/E[0]                 |                                                        |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spiData[7]_i_1_n_0            | oled_display/oled_ctrl/spiData[5]_i_1_n_0              |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/state_reg[2][0]      | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  vga_clk_BUFG                         |                                                      | display_interface/syncgen/CounterY_reg[8]_2            |                3 |              4 |         1.33 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/clk_div[3]_i_1_n_0   | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[16]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[19]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[0]                                 | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[3]                                 | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[5]                                 | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[9]                                 | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[12]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[13]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[14]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[15]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[20]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[17]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[23]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[8]                                 | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[2]                                 | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[10]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[7]                                 | Sw0_IBUF                                               |                3 |              4 |         1.33 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[18]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[21]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[24]                                | Sw0_IBUF                                               |                4 |              4 |         1.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[25]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[28]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[4]                                 | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[11]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[22]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[26]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[27]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[6]                                 | Sw0_IBUF                                               |                4 |              4 |         1.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[34]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[57]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[38]                                | Sw0_IBUF                                               |                4 |              4 |         1.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[41]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[39]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[53]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[54]                                | Sw0_IBUF                                               |                3 |              4 |         1.33 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[47]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[63]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[37]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[50]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[45]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[46]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[33]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[62]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[48]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[52]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[36]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[56]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[55]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[44]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[40]                                | Sw0_IBUF                                               |                2 |              4 |         2.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/E[30]                                | Sw0_IBUF                                               |                1 |              4 |         4.00 |
+|  game_logic_clk_BUFG                  | U_debounce/FSM_onehot_state[4]_i_1__1_n_0            | Sw0_IBUF                                               |                1 |              5 |         5.00 |
+|  game_logic_clk_BUFG                  | C_debounce/FSM_onehot_state[4]_i_1__3_n_0            | Sw0_IBUF                                               |                1 |              5 |         5.00 |
+|  game_logic_clk_BUFG                  | D_debounce/FSM_onehot_state[4]_i_1__2_n_0            | Sw0_IBUF                                               |                2 |              5 |         2.50 |
+|  game_logic_clk_BUFG                  | L_debounce/FSM_onehot_state[4]_i_1_n_0               | Sw0_IBUF                                               |                2 |              5 |         2.50 |
+|  game_logic_clk_BUFG                  | R_debounce/FSM_onehot_state[4]_i_1__0_n_0            | Sw0_IBUF                                               |                2 |              5 |         2.50 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spiData[7]_i_1_n_0            |                                                        |                1 |              5 |         5.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/cursor_addr[5]_i_1_n_0               | Sw0_IBUF                                               |                2 |              6 |         3.00 |
+|  game_logic_clk_BUFG                  | game_logic_inst/selected_addr[5]_i_1_n_0             |                                                        |                2 |              6 |         3.00 |
+|  vga_clk_BUFG                         |                                                      |                                                        |                6 |              6 |         1.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/E[0]                          | Sw0_IBUF                                               |                2 |              7 |         3.50 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/FSM_onehot_state_reg[1]       |                                                        |                1 |              7 |         7.00 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/done_send_reg_2[0]   | Sw0_IBUF                                               |                3 |              8 |         2.67 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/done_send_reg_0[0]   | Sw0_IBUF                                               |                3 |              8 |         2.67 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/state_reg[3][0]      | Sw0_IBUF                                               |                3 |              8 |         2.67 |
+|  vga_clk_BUFG                         |                                                      | display_interface/syncgen/CounterX[9]_i_1_n_0          |                7 |             10 |         1.43 |
+|  vga_clk_BUFG                         | display_interface/syncgen/CounterY[9]_i_1_n_0        | Sw0_IBUF                                               |                4 |             10 |         2.50 |
+|  game_logic_clk_BUFG                  | game_logic_inst/board_out_addr[5]_i_1_n_0            | Sw0_IBUF                                               |                3 |             11 |         3.67 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/spi_ctrl/bit_count[3]_i_1_n_0 | Sw0_IBUF                                               |                4 |             12 |         3.00 |
+|  CLK_BUF/O                            |                                                      | Sw0_IBUF                                               |                3 |             12 |         4.00 |
+|  game_logic_clk_BUFG                  | U_debounce/I                                         | Sw0_IBUF                                               |                3 |             14 |         4.67 |
+|  game_logic_clk_BUFG                  | C_debounce/I                                         | Sw0_IBUF                                               |                3 |             14 |         4.67 |
+|  game_logic_clk_BUFG                  | D_debounce/I                                         | Sw0_IBUF                                               |                3 |             14 |         4.67 |
+|  game_logic_clk_BUFG                  | L_debounce/I                                         | Sw0_IBUF                                               |                3 |             14 |         4.67 |
+|  game_logic_clk_BUFG                  | R_debounce/I                                         | Sw0_IBUF                                               |                3 |             14 |         4.67 |
+|  game_logic_clk_BUFG                  |                                                      | oled_display/oled_ctrl/delay_gen/delayCount[0]_i_1_n_0 |                5 |             17 |         3.40 |
+|  game_logic_clk_BUFG                  |                                                      | Sw0_IBUF                                               |               13 |             19 |         1.46 |
+|  game_logic_clk_BUFG                  | oled_display/oled_ctrl/sendDone_reg_0[0]             | Sw0_IBUF                                               |                6 |             20 |         3.33 |
++---------------------------------------+------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
+
+
